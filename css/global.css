@@ -1,0 +1,75 @@
+/* Container */
+.container {
+  max-width: 720px !important;
+}
+/* Color */
+.bg-orange {
+  background-color: #ef6551 !important;
+}
+.bg-lime-green {
+  background-color: #4fcba6 !important;
+}
+.orange {
+  color: #ef6551 !important;
+}
+.lime-green {
+  color: #4fcba6 !important;
+}
+/* Body */
+body {
+  font-family: "M PLUS Rounded 1c", sans-serif !important;
+}
+/* Card */
+.todo-card,
+.movie-card {
+  width: 329px;
+  height: 139px;
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 15px rgba(8, 5, 5, 0.15);
+  border-radius: 15px;
+}
+/* Button */
+.btn-primary {
+  background: #ffeeed !important;
+  border-radius: 15px !important;
+  font-family: Rounded Mplus 1c !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  font-size: 12px !important;
+  align-items: center !important;
+  text-align: center !important;
+  border: #da5850 !important;
+  color: #da5850 !important;
+}
+.btn-secondary {
+  background: #fff8e4 !important;
+  border-radius: 15px !important;
+  font-family: Rounded Mplus 1c !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  font-size: 12px !important;
+  align-items: center !important;
+  text-align: center !important;
+  border: #cc9906 !important;
+  color: #cc9906 !important;
+}
+.btn-details {
+  background: #6cd6e7 !important;
+  border-radius: 15px !important;
+  font-family: Rounded Mplus 1c !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  font-size: 12px !important;
+  align-items: center !important;
+  text-align: center !important;
+  border: #6cd6e7 !important;
+  color: #fff !important;
+}
+.btn-test {
+  content: "\f019";
+}
+/* Link*/
+.dropdown-item:active {
+  background-color: #da5850 !important;
+}

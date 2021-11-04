@@ -1,0 +1,36 @@
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&display=swap");
+
+.nav-bottom {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.change-icon > .far + .fas,
+.change-icon:hover > .far {
+  display: none;
+}
+.change-icon:hover > .far + .fas {
+  display: inherit;
+}
+.fa-square {
+  color: #ff543e;
+  font-size: 35px;
+}
+.fa-check-square {
+  color: #ff543e;
+  font-size: 35px;
+}
+.fa-ellipsis-h {
+  color: #8f8e93;
+  font-size: 25px;
+}
+.movie-img {
+  width: 71.48px;
+  height: 124px;
+  border-radius: 13px;
+}
+.search-img {
+  width: 115px;
+  height: 173px;
+  border-radius: 18px !important;
+}

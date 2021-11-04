@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS --->
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Todo -->
+      <div id="todoElement" class="row todo justify-content-center">
+        <!-- Todo Header-->
+        <div class="row">
+          <div class="col todos-header text-center mt-5">
+            <h1><i class="far fa-dot-circle"></i> TODOS</h1>
+          </div>
+        </div>
+        <!-- Todo Items-->
+        <div class="row mb-5" id="todos">
+          <!-- Todo Item-->
+          <div class="col-lg-6 col-12 mt-4 todo">
+            <div class="todo-card d-flex flex-column">
+              <div class="mb-auto p-2 d-flex justify-content-between">
+                <h5 class="text-start m-2 task">Create Movie Page</h5>
+                <div class="dropdown">
+                  <button class="btn p-1" id="editTodo" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-ellipsis-h"></i>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="editTodoButton">
+                    <li>
+                      <button class="dropdown-item edit-todo">Edit</button>
+                    </li>
+                    <li>
+                      <button class="dropdown-item delete-todo">Delete</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-2 d-flex justify-content-between">
+                <div>
+                  <button class="btn btn-primary m-1 type">Work</button>
+                  <button class="btn btn-secondary m-1 priority">Low</button>
+                </div>
+                <div>
+                  <span class="change-icon">
+                    <i class="far fa-square"></i>
+                    <i class="fas fa-check-square"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Todo Add Icon-->
+        <div class="fixed-bottom mb-5 text-center fa-3x orange">
+          <i id="addTodo" class="fas fa-plus-circle"></i>
+        </div>
+        <!-- Todo Modal-->
+        <div class="modal fade" id="todoModal" tabindex="-1" aria-labelledby="todoModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="type" class="form-label">Type</label>
+                  <input type="email" class="form-control" id="type" placeholder="personal/work etc." />
+                </div>
+                <div class="mb-3">
+                  <label for="task" class="form-label">Task</label>
+                  <textarea class="form-control" id="task" rows="3" placeholder="Enter your task here"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Priority</label>
+                  <select class="form-select" id="priority">
+                    <option selected>Select priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary modalButton">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Movie -->
+      <div id="movieElement" class="row movie row todo justify-content-center" style="display: none">
+        <div class="row">
+          <div class="col movie-header text-center mt-5">
+            <h1><i class="fas fa-film"></i> Movie</h1>
+          </div>
+          <div class="input-group rounded">
+            <input type="search" id="searchInput" class="form-control rounded" placeholder="Search Movie" aria-label="Search" aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon"> <i class="fas fa-search"></i> </span>
+          </div>
+        </div>
+        <!-- Movie Items-->
+        <div class="col movie-header text-center mt-5">
+          <h3>Watchlist</h3>
+        </div>
+        <div class="row mb-5" id="movie">
+          <!-- Movie Item-->
+          <div class="col-lg-6 col-12 mt-4 movie">
+            <div class="movie-card d-flex flex-wrap">
+              <div style="width: 75%" class="d-flex flex-column justify-content-between">
+                <div class="ps-2 pt-2 d-flex">
+                  <span class="change-icon">
+                    <i class="far fa-square"></i>
+                    <i class="fas fa-check-square"></i>
+                  </span>
+                  <h5 class="text-start m-2 title">Suits</h5>
+                </div>
+                <div class="ps-3 p-2 d-flex">
+                  <div>
+                    <button class="btn btn-primary m-1 type">Series</button>
+                    <button id="tt1632701" class="btn btn-details m-1 details">Details</button>
+                  </div>
+                  <div class="dropdown">
+                    <button class="btn p-1" id="editMovie" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="editMovieButton">
+                      <li>
+                        <button class="dropdown-item delete-movie">Delete</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <img class="movie-img pt-2" src="https://m.media-amazon.com/images/M/MV5BNmVmMmM5ZmItZDg0OC00NTFiLWIxNzctZjNmYTY5OTU3ZWU3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg" alt="" srcset="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Movie Search Modal-->
+        <div class="modal fade" id="movieSearchModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title-movie"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center search-result"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Movie Details Modal-->
+        <div class="modal fade" id="movieDetailsModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true" data-bs-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center movie-details"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Nav -->
+    <div class="row fixed-bottom nav-bottom">
+      <div class="col-6 d-grid p-0 m-0">
+        <button id="todoButton" class="btn pb-2 pt-2 bg-orange text-light rounded-0">Todo</button>
+      </div>
+      <div class="col-6 d-grid p-0 m-0">
+        <button id="movieButton" class="btn pb-2 pt-2 bg-lime-green text-light rounded-0">Movies</button>
+      </div>
+    </div>
+    <!-- Script --->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/uiTodo.js"></script>
+    <script src="js/uiMovie.js"></script>
+    <script src="js/appTodo.js"></script>
+    <script src="js/appMovie.js"></script>
+    <script src="js/todo.js"></script>
+  </body>
+</html>
