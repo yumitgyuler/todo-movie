@@ -1,6 +1,7 @@
 # Remindr - Todo and Whatchlist
 
 Live Demo: https://yumitgyuler.github.io/remindr
+
 Figma design: https://www.figma.com/file/wjoWzXFt7mPjaT5JwHDJRG/Remindr?node-id=0%3A1
 A simple todo list app built in HTML, CSS and JavaScript. Basic functionality includes:
 
